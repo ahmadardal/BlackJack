@@ -1,5 +1,9 @@
 ﻿namespace BlackJack;
-
+/*
+ *
+ * A BlackJack game written in C#
+ * 
+ */
 enum GameStatus
 {
     Continue = 0,
