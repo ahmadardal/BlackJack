@@ -1,5 +1,9 @@
 ﻿namespace BlackJack;
-
+/*
+ *
+ * A BlackJack game written in C#
+ * 
+ */
 enum GameStatus
 {
     Continue = 0,
@@ -19,10 +23,10 @@ class Program
         GameStatus GetStatus()
         {
             /*
-             * 0 betyder fortsätt spelet
-             * 1 betyder att spelaren vunnit
-             * 2 betyder att datorn vunnit
-             * 3 betyder oavgjort
+             * 0 – Continue game
+             * 1 – Player won
+             * 2 – Computer won
+             * 3 – Draw
              */
 
             var playerSum = playerHand.Sum();
@@ -90,7 +94,7 @@ class Program
         while (true)
         {
             // { 1, 3, 5 } -> "1, 3, 5"
-            // Din hand: 1, 3, 5 (9)
+            // Your hand: 1, 3, 5 (9)
             Console.Clear();
 
             var playerNumbers = string.Join(", ", playerHand);
@@ -110,7 +114,7 @@ class Program
 
             if (input.Key == ConsoleKey.S)
             {
-                // Om man har stannat, så kollar vi den som är närmast 21
+                // Check difference and who is closest to 21
                 var playerDifference = 21 - playerHand.Sum();
                 var dealerDifference = 21 - dealerHand.Sum();
 
